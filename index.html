@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KyotoHokkaido Music</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+        function changeAudioSource(songInfo) {
+            const audioElement = document.getElementById('audioElement');
+            audioElement.src = songInfo.audioPath;
+            audioElement.load(); // Memuat ulang sumber audio baru
+            audioElement.play(); // Memainkan audio yang baru
+
+            // Ubah informasi album pada elemen aside
+            document.getElementById('albumImage').src = songInfo.albumPath;
+            document.getElementById('albumTitle').textContent = songInfo.albumTitle;
+            document.getElementById('artis').textContent = songInfo.artis;
+            document.getElementById('album').textContent = songInfo.album;
+            document.getElementById('lyrics').textContent = songInfo.lyrics;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <h1>Selamat Datang di KyotoMusic!</h1>
+                </li>
+                <li>
+                    <h1 id="playMusicButton">Bagaimana Caranya?</h1>
+                </li>
+
+            </ul>
+            <div id="popup" class="modal">
+                <div class="modal-content">
+                    <span class="close" id="closePopup">&times;</span>
+                    <p>Jika ingin memutar musik, pilih satu lagu terlebih dahulu.</p>
+                </div>
+            </div>            
+        </nav>         
+    </header>
+    <main class="container">
+        <aside>
+            <!-- <img src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//catalog-image/95/MTA-113645345/no-brand_no-brand_full01.jpg" alt="Album Musik" height="200"> -->
+            <img id="albumImage" src="" alt="Photo Album" height="200px">
+            <h2>Data Musik</h2>
+            <hr>
+            <ul>
+                <li>Judul: <a id="albumTitle"></a></li>
+                <li>Artis: <a id="artis"></a></li>
+                <li>Album: <a id="album"></a></li>
+            </ul>
+            <audio  id="audioElement" controls autoplay>
+                <source src="" type="audio/mpeg">
+                Maaf, browser Anda tidak mendukung pemutaran audio.
+            </audio>
+        </aside>
+        <div id="content">
+            <article>
+                <h2>Daftar Lagu</h2>
+                <ul>
+                    <li>
+                        <button onclick="changeAudioSource({ 
+                            audioPath: 'assets/Lion Heart.mp3', 
+                            albumPath: 'https://upload.wikimedia.org/wikipedia/en/6/62/GirlsGeneration5thAlbumLionHeart.jpg', 
+                            albumTitle: 'Lion Heart',
+                            artis: 'Girl Generation',
+                            album: 'Lion Heart',
+                            lyrics: `
+Oooh neowa na cheom mannasseul ttae
+Oooh machi sajacheoreom maemdolda
+Gihoereul noryeo nae mam ppaeseun neo
+
+Ah neon dallajin ge eopseo yeojeonhae
+Nan aega tago tto ta
+Sanyanggam chaja han nun paneun neo
+
+Subaek beon mireonaeya haeneunde
+Sucheon beon neol tteonaya haeneunde
+
+Tell me why
+Wae mami mami jakku heundeullini
+Nan yeogi yeogi ne yeope ijanhni
+Jeongsin charyeo lion heart
+
+Nan ae ga ta
+Nae mami mami deoneun sikji anhge
+Nan yeogijeogi ttwinoneun neoui mam
+Gildeurillae lion heart
+
+Ohohoh ohohohohoh
+
+Oooh neon jayuroun yeonghon yeojeonhae
+Chungsilhae bonneung ape
+Jigeum ne yeope nan an boini
+
+Subaek beon gomin gominhaebwado
+Sucheon beon gyeolguk dabeun neoinde
+
+Tell me why
+Wae mami mami jakku heundeullini
+Nan yeogi yeogi ne yeope ijanhni
+Jeongsin charyeo lion heart
+
+Nan ae ga ta
+Nae mami mami deoneun sikji anhge
+Nan yeogijeogi ttwinoneun neoui mam
+Gildeurillae lion heart
+
+Ohohoh ohohohohoh
+Gonhi jamjaneun naui kokkeuteul baby
+Nega geondeuryeo nado hwaga na baby
+
+Tell me why
+Wae mami mami jakku heundeullini
+Nan yeogi yeogi ne yeope ijanhni
+Jeongsin charyeo lion heart
+
+Nan ae ga ta
+Nae mami mami deoneun sikji anhge
+Nan yeogijeogi ttwinoneun neoui mam
+Gildeurillae lion heart
+
+Ladies y’all know
+What I’m talking about right? (yeah)
+Modu da anira haedo
+Joheul ttae itji anha?
+(Sasil naman joheum dwaetji mwo)
+Baramboda ppareun nunchiro (mameun tteugeopge)
+Haessalcheoreom ttatteushan mallo (meorin chagapge)
+Gildeurillae neoui lion heart
+Saja gateun neoui lion heart
+
+Lalala lalalalala
+Yeogi waseo anja
+Nae gyeoteman isseo
+Han nun palji mara
+Lion heart
+                            `})">Lion heart</button>
+                    </li>
+                    <li>
+                        <button onclick="changeAudioSource({ 
+                            audioPath: 'assets/The Boys.mp3', 
+                            albumPath: 'https://i.discogs.com/mHSLWnCPrsk3zY6y7-i4VwgvWQcqguHZExZubZ8OKVo/rs:fit/g:sm/q:90/h:600/w:560/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM0MzM5/MjItMTMzMDIzNTI3/MS5qcGVn.jpeg', 
+                            albumTitle: 'The Boys',
+                            artis: 'Girls Generation',
+                            album: 'The Boys',
+                            lyrics: `
+                                        
+[Refrain: All, Jessica]
+Geobi naseo sijagjocha an hae bwassdamyeon
+Geudaen tudeoldaeji mara jom (GG)
+Jujeohamyeon gihoeneun modu neoreul bikyeo ga
+Gaseum pyeogo nawa bwara jom (TRX)
+B-bring the boys out
+
+[Interlude: All, Tiffany]
+(Yeah, you know)
+B-bring the boys out
+We bring the boys out, we bring the boys out (Yeah)
+B-bring the boys out
+
+[Verse 1: Taeyeon, Yoona, Tiffany]
+Sunlie majchwo saneun geos
+Neon gildeuryeojyeo beoryeossni?
+Gwaenchanhni? (Get up)
+Amdamhan sesangi geudael
+Junug deulge mandеuni? (That’s funny)
+Gwaenchanhni?
+
+[Pre-Chorus: Sunny, Seohyun, All, Tiffany]
+Geunyang bol suga eobsеo nan budijhigo kkaejyeodo
+Myeoch beonigo ireona (Ah, ah, ah, ah)
+Nalkarobge meosjige ireul naegoya maldeon (Ah, ah)
+Ni yaseongeul boyeo jwo, my boy (Ah, ah, ah)
+B-bring the boys out (Bring the boys out)
+
+[Chorus: Yuri, All, Sooyoung]
+Girls’ Generation make you feel the heat
+Jeon segyega neoreul jumoghae (B-bring the boys out)
+Wipungdo dangdanghaji
+Ppyeossogbuteo neon wonlae meosjyeosseo, you know the girls
+B-bring the boys out
+
+[Verse 2: Jessica, Sunny]
+Heundeulliji malgo geudaen jaril jikyeo
+Wonlae jeonjaeng gateun salmeul saneun inganingeol
+Neoneun wae? (Yeah, fly high)
+Beolsseo wae? (You, fly high)
+Pogihae, oh
+Neon meoreossjanha
+
+[Pre-Chorus: Seohyun, Taeyeon, All, Tiffany]
+Neoui jibnyeomeul boyeo jwo (Yeah)
+Jigul jom heundeureo jwo (Yeah)
+Moduga neol bol su issge (Ah, ah, ah, ah)
+Yeogsaneun saerobge (Yeah)
+Sseuyeojige doelgeol (Come on, come on)
+Juingongeun baro neo (Ah, ah, ah, ah, ah, ah)
+Baro neo, oh-oh, oh (Ah, ah, ah, ah, ah, ah)
+B-bring the boys out! (Bring the boys out!)
+
+[Chorus: Tiffany, All, Hyoyeon]
+Girls’ Generation make you feel the heat
+Jeon segyega neoreul jumoghae (B-bring the boys out)
+Wipungdo dangdanghaji
+Ppyeossogbuteo neon wonlae meosjyeosseo, you know the girls
+B-bring the boys out
+
+
+[Verse 3: (All), Yuri, Yoona, Hyoyeon, Sooyoung]
+(Girls, bring the boys out!)
+I wanna dance right now, naega ikkeureo julge come out
+Sesang namjadeuriyeo nan number one
+Jihyereul juneun Athena, check this out
+Jeulgyeo bwara dojeonui seolleim
+Imi modu gajin sesangui namja
+Geudaero jjug ganeun geoya keep up
+Girls’ Generation, we don’t stop (B-bring the boys out)
+
+[Bridge: Jessica, Taeyeon, Taeyeon & Seohyun]
+Maghyeo beoryeossdeon miraega an boyeossdeon miraega
+Ne nunape pyeolchyeojyeo
+Jeomjeom deo wanbyeoghan ni moseube machi
+Nan ppallyeo deul geos gata, my heart!
+
+[Refrain: All, Taeyeon, Seohyun]
+Geobi naseo sijagjocha an hae bwassdamyeon
+Geudaen tudeoldaeji mara jom
+Just bring the boys out
+Jujeohamyeon gihoeneun modu neoreul bikyeo ga
+Gaseum pyeogo nawa bwara jom
+Bring the boys out
+
+[Pre-Chorus: Jessica]
+'Cause the girls, bring the boys out
+Girls, bring the boys out
+Girls, bring the boys out
+Girls, bring the boys out!
+
+
+[Chorus: Sunny, All, Tiffany]
+Girls’ Generation make ’em feel the heat
+Jeon segyega uril jumoghae (B-bring the boys out)
+Sesangeul ikkeul namja
+Meosjin yeojadeul yeogi moyeora, you know the girls
+B-bring the boys out
+                            `})">The Boys</button>
+                    </li>
+                    <li>
+                        <button onclick="changeAudioSource({ 
+                            audioPath: 'assets/I Got A Boy.mp3', 
+                            albumPath: 'https://upload.wikimedia.org/wikipedia/id/b/b5/Snsdigotaboyalbum.jpg', 
+                            albumTitle: 'I Got A Boy',
+                            artis: 'Girls Generation',
+                            album: 'Dancing Queen', 
+                            lyrics: `           
+Ayo, JIJI
+Yeah yeah sijakae bolkka
+Eomeo yae jom bwara yae
+Museun iri isseotgillae meori jallatdae eo
+Eomeo! tto yae jom borago
+Meoributeo balkkeutkkaji seutairi bakkwieosseo
+Wae geuraetdae? gunggeumhae jukgenne
+Wae geuraetdae? malhae bwa bwa jom
+
+Hahaha! Hey let me introduce myself
+Here comes trouble whoo! ttarahe
+
+Oh, oh-oh-eh-oh
+Oh, oh-eh-oh oh-oh-oh-oh
+Neo jallasso jeungmal
+
+Jiga mwonde? utgyeo
+Neomu kotdae sen geo ani?
+Nabogo pyeongbeomhadanda yae (eo)
+Geu namja wanjeon mame deureonna bwa maldo an dwae maldo an dwae
+Neomu yeppeojigo Sexyhaejyeosseo geu namja ttaemuniji?
+Mureobol ppeonhaetdanikka neo bakkun hwajangpumi mwonji
+See upcoming pop shows
+Get tickets for your favorite artists
+
+You might also like
+The Tortured Poets Department
+Taylor Swift
+But Daddy I Love Him
+Taylor Swift
+Whos Afraid of Little Old Me?
+Taylor Swift
+
+[Pre-Refrain]
+Sasil na cheom bwasseo
+Sangcheo ibeun yasu gateun gipeun nun
+Yaegiman haedo eojilhaetdanikkan
+Neo jallasseo jeungmal jallasseo jeungmal
+
+[Refrain]
+Oh (Here comes trouble)
+Oh-oh-eh-oh (Hey girl listen)
+Oh, oh-eh-oh, oh-oh-oh-oh
+Neo jallatda jeungmal (jallasseo)
+Oh, oh-oh-eh-oh
+Oh, oh-eh-oh, oh-oh-oh-oh
+Neo jallasseo jeungmal
+
+[Interlude]
+Ayo stop! Let me put it down another way
+
+[Chorus]
+I got a boy meotjin I got a boy chakan
+I got a boy handsome boy nae mam da gajyeogan
+I got a boy meotjin I got a boy chakan
+I got a boy, awesome boy wanjeon banhaenna bwa
+
+[Post-Chorus]
+A nae wangjanim
+Eonje i momeul guhareo wa jusil tengayo?
+Hayan kkumcheoreom
+Nal pume ana ollyeo naraga jusigetjyo?
+
+
+[Verse 2]
+Na kkamjjak menbungiya
+Geu sarameun nae minnachi gunggeumhadae
+Wanjeon mame deureo
+Mot igin cheok boyeo jwodo gwaenchaneulkka?
+Oh jeoldaero an doeji (geuchi geuchi)
+Uri jikil geon jikija (matji matji)
+Geuui mameul modu gajil ttaekkaji
+Igeon jeoldaero ijeobeoriji mallagu
+
+[Refrain]
+Oh, oh-oh-eh-oh
+Oh-oh-eh-oh, oh-oh
+Bameul saedo mojalla da-da
+Oh, oh-oh-eh-oh
+Oh-oh-eh-oh, oh-oh
+Uri choego gwansimsada-da
+
+[Verse 3]
+Nae mal deureo bwa geu ai neone alji?
+Jom eorijiman sogeun kkwak chasseo
+Eotteol ttaen oppacheoreom deumjikajiman
+Aegyoreul buril ttaen neom yeppeo jukgesseo
+
+[Refrain]
+Oh, oh-oh-eh-oh
+Oh-oh-eh-oh, oh-oh
+Neo michyeosseo michyeosseo
+Oh, oh-oh-eh-oh
+Oh-oh-eh-oh, oh-oh
+Neo michyeosseo michyeosseo
+
+
+[Verse 4]
+Nan jeongmal hwaga na jukgesseo
+Nae namjan nal yeojaro an boneungeol
+Mangnyeonhal ttaen eotteokamyeon naega jokenni?
+Jilturado nage haebolkka? soksanghae eotteokae na?
+Maldo an dwae maldo an dwae
+
+[Interlude]
+Dont stop! Lets bring it back to 1:40
+
+[Chorus]
+I got a boy meotjin I got a boy chakan
+I got a boy handsome boy nae mam da gajyeogan
+I got a boy meotjin I got a boy chakan
+I got a boy awesome boy wanjeon banhaenna bwa
+
+[Bridge]
+Eonjena nae gyeoten nae pyeoni dwae jugo
+Gwi giullyeo juneun neo neo
+Nan idaero jigeum haengbokae
+Jal doel geonikka
+
+[Chorus]
+I got a boy meotjin I got a boy chakan (a nae wangjanim)
+I got a boy handsome boy nae mam da gajyeogan
+(eonje i momeul guhareo wa jusil tengayo?)
+I got a boy meotjin I got a boy chakan (hayan kkumcheoreom)
+I got a boy awesome boy wanjeon banhaenna bwa
+(nal pume ana ollyeo naraga jusigetjyo?)
+I got a boy meotjin I got a boy chakan (Oh, oh-oh-eh-oh)
+I got a boy handsome boy nae mam da gajyeogan (Oh-oh-eh-oh)
+I got a boy meotjin I got a boy chakan (Oh, oh-oh-eh-oh)
+I got a boy awesome boy wanjeon banhaenna bwa (Oh-oh-eh-oh)
+I got a boy meotjin 
+                            
+                            `})">I Got A Boy</button>
+                    </li>
+                    <li>
+                        <button onclick="changeAudioSource({ 
+                            audioPath: 'assets/Haheng.mp3', 
+                            albumPath: 'https://media.tenor.com/5BYK-WS0__gAAAAe/cool-fun.png', 
+                            albumTitle: 'Chai Kichi x Spaul Ha Hee (Singing Cat) KIFFNESS style',
+                            artis: 'Spaul',
+                            album: 'Cats Haheng',
+                            lyrics: `
+                                        
+Haheng Haheng Haheng Haheng 
+My name is chai and I'm so cute
+When I'm in need all I need is to say 
+
+ha hee
+ha hee
+ha hee
+ha hee
+ 
+I'm also make cat tunes for you
+So we'll dance to beat of this tunes
+how can you say no?
+
+Never give up on your dreams
+Keep on trying untill you succed
+In persistance you have to believe
+This is what Chai says
+In times of needs all you have to say ha heee
+
+ha hee
+ha hee
+ha hee
+ha hee
+                            `})">Haheng</button>
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <h2>Lirik Music</h2>
+                <p>
+                    <pre id="lyrics">
+                        Pilih lagu terlebih dahulu!
+                    </pre>
+                </p>
+            </article>
+        </div>
+    </main>
+    <footer>
+        &copy; 2024 KyotoMusic
+    </footer>
+    <script>
+        // Ambil elemen tombol dan popup
+        const playMusicButton = document.getElementById('playMusicButton');
+        const popup = document.getElementById('popup');
+        const closePopup = document.getElementById('closePopup');
+        
+        // Ketika tombol "Play Music" ditekan, tampilkan popup
+        playMusicButton.addEventListener('click', () => {
+            popup.style.display = 'block';
+        });
+
+        // Ketika tombol tutup di popup ditekan, sembunyikan popup
+        closePopup.addEventListener('click', () => {
+            popup.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
